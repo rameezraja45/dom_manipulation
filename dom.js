@@ -11,7 +11,7 @@ document.title = "Experimenting DOM";
 //console.log(document.getElementById('header-title'));
 //var headerTitle = document.getElementById('header-title');
 var header = document.getElementById('main-header');
-//console.log(headerTitle);
+//console.log(header);
 //headerTitle.textContent = "Hello";
 //headerTitle.innerText = "Hello Buddy";
 //console.log(headerTitle.innerText);
@@ -24,16 +24,18 @@ var items = document.getElementsByClassName('list-group-item');
 //console.log(items);
 //console.log(items[1]);
 //items[1].textContent = 'Hello 2';
-//items[1].style.fontWeight = 'bold';
-//items[1].style.backgroundColor = 'yellow';
+//items.style.fontWeight = 'bold';
+//items[0].style.backgroundColor = 'green';
 
 
- for(var i=0; i<items.length; i++){
-     items[i].style.backgroundColor = '#f4f4f4';
- }
-var ttl = document.getElementsByClassName('title');
-ttl[1].style.fontWeight = 'bold';
-ttl[1].style.color = 'green';
+for(var i=0; i<items.length; i++){
+      items[i].style.backgroundColor = '#f4f4f4';
+      items[2].style.backgroundColor = 'green';
+      items[i].style.fontWeight = 'bold';
+  }
+// var ttl = document.getElementsByClassName('title');
+// ttl[0].style.fontWeight = 'bold';
+// ttl[0].style.color = 'green';
 
 //GETELEMENTBYTAGNAME//
 //works same as getelementbyclassname//
