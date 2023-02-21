@@ -98,3 +98,84 @@ for(var i=0; i<odd.length; i++){
     even[i].style.backgroundColor = '#ccc';
     even[0].style.color = 'green';
 }
+
+
+// TRAVERSING DOM //
+
+var itemList = document.querySelector('#items');
+// parentNode
+//console.log(itemList.parentNode);
+//itemList.parentNode.style.backgroundColor = '#f4f4f4';
+//console.log(itemList.parentNode.parentNode);
+
+// parentElement
+// console.log(itemList.parentElement);
+// itemList.parentElement.style.backgroundColor = '#f4f4f4';
+// console.log(itemList.parentElement.parentElement);
+
+// childNodes
+//console.log(itemList.childNodes);
+//console.log(itemList.children);
+//console.log(itemList.children[1]);
+//itemList.children[1].style.backgroundColor = 'pink';
+
+// firstChild
+//console.log(itemList.firstChild);
+// firstElementChild
+//console.log(itemList.firstElementChild);
+//itemList.firstElementChild.textContent = 'Hello';
+
+// lastChild
+//console.log(itemList.lastChild);
+// lastElementChild
+//console.log(itemList.lastElementChild);
+//itemList.lastElementChild.textContent = 'Hello';
+
+
+// nextSibling
+//console.log(itemList.nextSibling);
+// nextElementSibling
+//console.log(itemList.nextElementSibling);
+
+// previousSibiling
+//console.log(itemList.previousSibling);
+// previousElementSibling
+//console.log(itemList.previousElementSibling);
+//itemList.previousElementSibling.style.color = 'red';
+
+
+// createElement
+
+// create a div
+var newDiv = document.createElement('div');
+// add class
+newDiv.className = 'hello';
+// add id
+newDiv.id = 'hello1';
+// add attribute
+newDiv.setAttribute('title', 'Hello Div');
+// create text node
+var newDivText = document.createTextNode('Hello World');
+// add text to div
+newDiv.appendChild(newDivText);
+
+var container = document.querySelector('header .container');
+var h1 = document.querySelector('header h1');
+//console.log(newDiv);
+newDiv.style.fontSize = '50px';
+newDiv.style.fontWeight = 'bold';
+container.insertBefore(newDiv,h1);
+
+// adding a list item to page
+// var newLi = document.createElement('li');
+// newLi.className = 'list-group-item';
+// var newLiText = document.createTextNode('Item 0');
+// newLi.appendChild(newLiText);
+
+var listGroup = document.getElementById('items');
+//console.log(listGroup.innerHTML);
+listGroup.innerHTML = '<li class="list-group-item">Item 0</li>' + listGroup.innerHTML;
+//var l0 = document.querySelector('li l0');
+// console.log(listGroup);
+//listGroup.insertBefore(newLi, l0);
+//console.log(listGroup.innerHTML);
