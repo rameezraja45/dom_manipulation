@@ -22,7 +22,7 @@ function addItem(e){
   // Add class
   li.className = 'list-group-item';
   // Add text node with input value
-  li.appendChild(document.createTextNode(newItem + ' '));
+  li.appendChild(document.createTextNode(newItem+' '));
   li.appendChild(document.createTextNode(description));
 
   // Create del button element
@@ -66,7 +66,9 @@ function filterItems(e){
   // Convert to an array
   Array.from(items).forEach(function(item){
     var itemName = item.firstChild.textContent;
-    if(itemName.toLowerCase().indexOf(text) != -1){
+    var description = item.childNodes[1].textContent;
+    console.log(description);
+    if(itemName.toLowerCase().indexOf(text) != -1 || description.toLowerCase().indexOf(text) != -1){
       item.style.display = 'block';
     } else {
       item.style.display = 'none';
@@ -76,25 +78,25 @@ function filterItems(e){
 
 
 // dearch from both input string
-const searchBar = document.getElementById('filter');
-const list = document.getElementById('items');
-searchBar.addEventListener('keyup', function (event) {
-  const searchText = event.target.value.toLowerCase();
-  // Get all the list items
-  const items = list.getElementsByTagName('li');
+// const searchBar = document.getElementById('filter');
+// const list = document.getElementById('items');
+// searchBar.addEventListener('keyup', function (event) {
+//   const searchText = event.target.value.toLowerCase();
+//   // Get all the list items
+//   const items = list.getElementsByTagName('li');
 
-  // Loop through each item and show or hide it based on the search text
-  for (let i = 0; i < items.length; i++) {
-    const item = items[i];
-    const text = item.innerText.toLowerCase();
+//   // Loop through each item and show or hide it based on the search text
+//   for (let i = 0; i < items.length; i++) {
+//     const item = items[i];
+//     const text = item.innerText.toLowerCase();
 
-    if (text.indexOf(searchText) !== -1) {
-      item.style.display = 'block';
-    } else {
-      item.style.display = 'none';
-    }
-  }
-});
+//     if (text.indexOf(searchText) !== -1) {
+//       item.style.display = 'block';
+//     } else {
+//       item.style.display = 'none';
+//     }
+//   }
+// });
 
 
 
