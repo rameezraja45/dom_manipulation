@@ -15,13 +15,15 @@ function addItem(e){
 
   // Get input value
   var newItem = document.getElementById('item').value;
+  var description = document.getElementById('description').value;
 
   // Create new li element
   var li = document.createElement('li');
   // Add class
   li.className = 'list-group-item';
   // Add text node with input value
-  li.appendChild(document.createTextNode(newItem));
+  li.appendChild(document.createTextNode(newItem + ' '));
+  li.appendChild(document.createTextNode(description));
 
   // Create del button element
   var deleteBtn = document.createElement('button');
@@ -69,8 +71,32 @@ function filterItems(e){
     } else {
       item.style.display = 'none';
     }
-  });
+  });    
 }
+
+
+// dearch from both input string
+const searchBar = document.getElementById('filter');
+const list = document.getElementById('items');
+searchBar.addEventListener('keyup', function (event) {
+  const searchText = event.target.value.toLowerCase();
+  // Get all the list items
+  const items = list.getElementsByTagName('li');
+
+  // Loop through each item and show or hide it based on the search text
+  for (let i = 0; i < items.length; i++) {
+    const item = items[i];
+    const text = item.innerText.toLowerCase();
+
+    if (text.indexOf(searchText) !== -1) {
+      item.style.display = 'block';
+    } else {
+      item.style.display = 'none';
+    }
+  }
+});
+
+
 
 // edit button for item 1
 let a=document.getElementsByTagName("li")[0]
